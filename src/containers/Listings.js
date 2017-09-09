@@ -38,7 +38,9 @@ class Listings extends Component {
             return (
               <Card key={i}>
                 {user.username}
-                <CardMedia>
+                <CardMedia
+                  overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name} />}
+                >
                   <img src={user.picture} alt={user.username} />
                 </CardMedia>
               </Card>
