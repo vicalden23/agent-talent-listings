@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Listings from './containers/Listings';
 import registerServiceWorker from './registerServiceWorker';
+import ModelDetails from './containers/ModelDetails';
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -17,6 +18,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route exact path="/" component={Listings} />
+          <Route exact path="/model/:id" component={ModelDetails} />
         </Switch>
       </div>
     </BrowserRouter>
