@@ -8,6 +8,9 @@ import {
   CardTitle,
   CardText
 } from 'material-ui/Card';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import './Listings.css';
 
 class Listings extends Component {
   constructor(props) {
@@ -31,17 +34,16 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="App">
-        <p>hello world</p>
+      <div className="all-users">
         {
           this.state.listings.map((user, i) => {
             return (
-              <Card key={i}>
+              <Card className="user-card" key={i}>
                 {user.username}
                 <CardMedia
-                  overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name} />}
+                  overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name}/>}
                 >
-                  <img src={user.picture} alt={user.username} />
+                    <img className="profile-pic" src={user.picture} alt={user.username} />
                 </CardMedia>
               </Card>
             )

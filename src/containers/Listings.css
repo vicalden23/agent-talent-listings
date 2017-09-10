@@ -1,0 +1,16 @@
+.all-users {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.user-card {
+  width: 300px;
+  min-width: 300px;
+  margin: 10px;
+}
+
+.profile-pic {
+  width: 100%;
+}
