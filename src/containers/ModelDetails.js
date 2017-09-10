@@ -6,6 +6,22 @@ import {
   GridTile
 } from 'material-ui/GridList';
 
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+  },
+  titleStyle: {
+    color: 'rgb(0, 188, 212)',
+  },
+};
+
 class ModelDetails extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +31,6 @@ class ModelDetails extends Component {
   }
 
   componentDidMount() {
-
     let id = this.props.match.params.id;
     axios.get('http://localhost:2023/api/listings')
       .then(res => {
@@ -28,10 +43,22 @@ class ModelDetails extends Component {
 
   render() {
     let model = this.state.model;
+    console.log(model.medias);
     return (
-      <div>
-        {model.city_name}
-      </div>
+      <GridList style={styles.gridList} cols={2.8}>
+          {!model.medias ?
+            <div>{'...loading'}</div> :
+            model.medias.map((photo, i) => (
+            <GridTile
+              key={i}
+              title={model.first_name}
+              titleStyle={styles.titleStyle}
+              titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+            >
+              <img src={photo} />
+            </GridTile>
+          ))}
+        </GridList>
     );
   }
 }
