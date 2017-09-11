@@ -43,7 +43,15 @@ class Listings extends Component {
                 <Link to={`/model/${i}`}>
                   <Card className="user-card" key={i}>
                     <CardMedia
-                      overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name}/>}
+                      overlay={<CardTitle title={
+                        <div>
+                        {user.first_name + ' ' + user.last_name}
+                        <span className="pull-right">
+                          ${user.hour_rate} HR
+                        </span>
+                        </div>
+                      }
+                        subtitle={user.city_name}/>}
                     >
                         <img className="profile-pic" src={user.picture} alt={user.username} />
                     </CardMedia>
