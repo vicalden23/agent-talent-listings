@@ -35,7 +35,7 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="center-grid">
+      <div className="listings-container">
         <div className="all-users">
           {
             this.state.listings.map((user, i) => {

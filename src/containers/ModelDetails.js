@@ -52,12 +52,13 @@ class ModelDetails extends Component {
     console.log(model);
     return (
       <div className="container">
-        <GridList style={styles.gridList} cellHeight={400}>
+        <GridList style={styles.gridList} cellHeight={550}>
           {!model.medias ?
             <div>{'...Loading Model Profile'}</div> :
             model.medias.map((photo, i) => (
               <GridTile
                 key={i}
+                className="grid-tile"
               >
                 <img src={photo} />
               </GridTile>
@@ -77,7 +78,7 @@ class ModelDetails extends Component {
             }
             subtitle={model.city_name}
           />
-          <CardText className="text">
+          <CardText style="padding-bottom: 0px;" className="text">
             <div className="row">
               <div className="col-md-6">
                 <p className="model-attr">Height: {!model.model ? 'N/A' : model.model.height}</p>

@@ -1,8 +1,7 @@
 .model-info {
-  width: 850px;
+  width: 825px;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom: 0px;
 }
 
 .model-bio {
@@ -27,4 +26,8 @@
 
 .text {
   background-color: #1c1e1f;
+}
+
+.grid-tile {
+  margin: 15px;
 }
