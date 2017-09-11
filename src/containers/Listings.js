@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardActions,
@@ -39,6 +40,9 @@ class Listings extends Component {
           this.state.listings.map((user, i) => {
             return (
               <Card className="user-card" key={i}>
+                <Link to={`/model/${i}`}>
+                  {user.first_name}
+                </Link>
                 {user.username}
                 <CardMedia
                   overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name}/>}

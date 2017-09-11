@@ -5,19 +5,25 @@ import {
   GridList,
   GridTile
 } from 'material-ui/GridList';
+import {
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText
+} from 'material-ui/Card';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import './ModelDetails.css';
 
 const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
   gridList: {
     display: 'flex',
     flexWrap: 'nowrap',
     overflowX: 'auto',
   },
-  titleStyle: {
+  gridTile: {
     color: 'rgb(0, 188, 212)',
   },
 };
@@ -27,7 +33,7 @@ class ModelDetails extends Component {
     super(props);
       this.state = {
         model: {}
-      }
+      };
   }
 
   componentDidMount() {
@@ -43,24 +49,58 @@ class ModelDetails extends Component {
 
   render() {
     let model = this.state.model;
-    console.log(model.medias);
+    console.log(model.model);
     return (
-      <GridList style={styles.gridList} cols={2.8}>
+      <div>
+        <GridList style={styles.gridList} cellHeight={330}>
           {!model.medias ?
-            <div>{'...loading'}</div> :
+            <div>{'...Loading Model Profile'}</div> :
             model.medias.map((photo, i) => (
-            <GridTile
-              key={i}
-              title={model.first_name}
-              titleStyle={styles.titleStyle}
-              titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-            >
-              <img src={photo} />
-            </GridTile>
+              <GridTile
+                key={i}
+              >
+                <img src={photo} />
+              </GridTile>
           ))}
         </GridList>
+        <Card className="model-info">
+          <CardTitle className="name" title={model.first_name + ' ' + model.last_name} subtitle={model.city_name}/>
+          <CardText>
+            <div className="row">
+              <div className="col-md-6">
+                <p className="model-attr">Height: {!model.model ? ' ' : model.model.height}</p>
+              </div>
+              <div className="col-md-6">
+                <p>Weight: {!model.model ? ' ' : model.model.weight}</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4">
+                <p>Bust: {!model.model ? ' ' : model.model.bust}</p>
+              </div>
+              <div className="col-md-4">
+                <p>Waist: {!model.model ? ' ' : model.model.waist}</p>
+              </div>
+              <div className="col-md-4">
+                <p>Hips: {!model.model ? ' ' : model.model.hips}</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                <p>Hair Color: {!model.model ? ' ' : model.model.hair_color}</p>
+              </div>
+              <div className="col-md-6">
+                <p>Eye Color: {!model.model ? ' ' : model.model.eye_color}</p>
+              </div>
+            </div>
+            <div>
+              <p>Biography:<br/>{!model.model? ' ' : model.bio}</p>
+            </div>
+          </CardText>
+        </Card>
+      </div>
     );
   }
 }
-
+/* {!model.model.weight ? ' ' : model.model.weight}*/
 export default ModelDetails;

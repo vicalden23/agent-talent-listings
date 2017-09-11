@@ -1,0 +1,18 @@
+.model-info {
+  width: 950px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.name {
+  text-align: center;
+}
+
+.model-attr {
+  font-weight: bold;
+  font-size: 20px
+}
+
+.attr-value {
+  font-size: 20px
+}
