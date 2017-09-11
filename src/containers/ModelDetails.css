@@ -1,18 +1,30 @@
 .model-info {
-  width: 950px;
+  width: 850px;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 0px;
 }
 
-.name {
-  text-align: center;
+.model-bio {
+  font-size: 17px;
+  color: #FFFFFF;
 }
 
 .model-attr {
-  font-weight: bold;
-  font-size: 20px
+  font-size: 22px;
+  text-align: center;
+  color: #EEC015;
 }
 
-.attr-value {
-  font-size: 20px
+.container {
+  background-color: black;
+  width: 100%;
+}
+
+.title {
+  background-color: #55676A;
+}
+
+.text {
+  background-color: #1c1e1f;
 }

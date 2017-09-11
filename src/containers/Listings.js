@@ -35,24 +35,24 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="all-users">
-        {
-          this.state.listings.map((user, i) => {
-            return (
-              <Card className="user-card" key={i}>
+      <div className="center-grid">
+        <div className="all-users">
+          {
+            this.state.listings.map((user, i) => {
+              return (
                 <Link to={`/model/${i}`}>
-                  {user.first_name}
+                  <Card className="user-card" key={i}>
+                    <CardMedia
+                      overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name}/>}
+                    >
+                        <img className="profile-pic" src={user.picture} alt={user.username} />
+                    </CardMedia>
+                  </Card>
                 </Link>
-                {user.username}
-                <CardMedia
-                  overlay={<CardTitle title={user.first_name + ' ' + user.last_name} subtitle={user.city_name}/>}
-                >
-                    <img className="profile-pic" src={user.picture} alt={user.username} />
-                </CardMedia>
-              </Card>
-            )
-          })
-        }
+              )
+            })
+          }
+        </div>
       </div>
     );
   }

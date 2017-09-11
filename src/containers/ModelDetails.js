@@ -49,10 +49,10 @@ class ModelDetails extends Component {
 
   render() {
     let model = this.state.model;
-    console.log(model.model);
+    console.log(model);
     return (
-      <div>
-        <GridList style={styles.gridList} cellHeight={330}>
+      <div className="container">
+        <GridList style={styles.gridList} cellHeight={400}>
           {!model.medias ?
             <div>{'...Loading Model Profile'}</div> :
             model.medias.map((photo, i) => (
@@ -64,37 +64,49 @@ class ModelDetails extends Component {
           ))}
         </GridList>
         <Card className="model-info">
-          <CardTitle className="name" title={model.first_name + ' ' + model.last_name} subtitle={model.city_name}/>
-          <CardText>
+          <CardTitle
+            className="title"
+            title={
+              <div>
+                {model.first_name + ' ' + model.last_name}
+                <span className="pull-right">
+                  ${model.hour_rate} / hour<br/>
+                  ${model.rate} / day
+                </span>
+              </div>
+            }
+            subtitle={model.city_name}
+          />
+          <CardText className="text">
             <div className="row">
               <div className="col-md-6">
-                <p className="model-attr">Height: {!model.model ? ' ' : model.model.height}</p>
+                <p className="model-attr">Height: {!model.model ? 'N/A' : model.model.height}</p>
               </div>
               <div className="col-md-6">
-                <p>Weight: {!model.model ? ' ' : model.model.weight}</p>
+                <p className="model-attr">Weight: {!model.model ? 'N/A' : model.model.weight}</p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p>Bust: {!model.model ? ' ' : model.model.bust}</p>
+                <p className="model-attr">Bust: {!model.model ? 'N/A' : model.model.bust}</p>
               </div>
               <div className="col-md-4">
-                <p>Waist: {!model.model ? ' ' : model.model.waist}</p>
+                <p className="model-attr">Waist: {!model.model ? 'N/A' : model.model.waist}</p>
               </div>
               <div className="col-md-4">
-                <p>Hips: {!model.model ? ' ' : model.model.hips}</p>
+                <p className="model-attr">Hips: {!model.model ? 'N/A' : model.model.hips}</p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-6">
-                <p>Hair Color: {!model.model ? ' ' : model.model.hair_color}</p>
+                <p className="model-attr" >Hair Color: {!model.model ? 'N/A' : model.model.hair_color}</p>
               </div>
               <div className="col-md-6">
-                <p>Eye Color: {!model.model ? ' ' : model.model.eye_color}</p>
+                <p className="model-attr" >Eye Color: {!model.model ? 'N/A' : model.model.eye_color}</p>
               </div>
             </div>
             <div>
-              <p>Biography:<br/>{!model.model? ' ' : model.bio}</p>
+              <p className="model-bio">{!model.model? ' ' : model.bio}</p>
             </div>
           </CardText>
         </Card>

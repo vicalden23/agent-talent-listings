@@ -3,10 +3,11 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
   overflow-x: auto;
+  margin-left: 60px;
 }
 
 .user-card {
-  width: 300px;
+  width: 420px;
   min-width: 300px;
   margin: 10px;
 }
