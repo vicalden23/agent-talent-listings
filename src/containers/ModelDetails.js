@@ -56,12 +56,14 @@ class ModelDetails extends Component {
           {!model.medias ?
             <div>{'...Loading Model Profile'}</div> :
             model.medias.map((photo, i) => (
-              <GridTile
-                key={i}
-                className="grid-tile"
-              >
-                <img src={photo} />
-              </GridTile>
+              <a href={photo}>
+                <GridTile
+                  key={i}
+                  className="grid-tile"
+                >
+                  <img src={photo} />
+                </GridTile>
+              </a>
           ))}
         </GridList>
         <Card className="model-info">
