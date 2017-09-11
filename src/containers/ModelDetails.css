@@ -6,13 +6,13 @@
 
 .model-bio {
   font-size: 17px;
-  color: #FFFFFF;
+  color: black;
 }
 
 .model-attr {
   font-size: 22px;
   text-align: center;
-  color: #EEC015;
+  color: black;
 }
 
 .container {
@@ -21,11 +21,11 @@
 }
 
 .title {
-  background-color: #55676A;
+  background-color: white;
 }
 
 .text {
-  background-color: #1c1e1f;
+  background-color: white;
 }
 
 .grid-tile {
