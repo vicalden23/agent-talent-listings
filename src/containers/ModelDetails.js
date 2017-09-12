@@ -67,7 +67,7 @@ class ModelDetails extends Component {
             className="title"
             title={
               <div>
-                {model.first_name + ' ' + model.last_name}
+                {!model.first_name ? ' ' : model.first_name + ' ' + model.last_name}
                 <span className="pull-right">
                   ${model.hour_rate} / hour<br/>
                   ${model.rate} / day
@@ -79,29 +79,29 @@ class ModelDetails extends Component {
           <CardText className="text">
             <div className="row">
               <div className="col-md-6">
-                <p className="model-attr">Height: {!model.model ? 'N/A' : model.model.height}</p>
+                <p className="model-attr">Height: {!model.model ? ' ' : model.model.height}</p>
               </div>
               <div className="col-md-6">
-                <p className="model-attr">Weight: {!model.model ? 'N/A' : model.model.weight}</p>
+                <p className="model-attr">Weight: {!model.model ? ' ' : model.model.weight}</p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p className="model-attr">Bust: {!model.model ? 'N/A' : model.model.bust}</p>
+                <p className="model-attr">Bust: {!model.model ? ' ' : model.model.bust}</p>
               </div>
               <div className="col-md-4">
-                <p className="model-attr">Waist: {!model.model ? 'N/A' : model.model.waist}</p>
+                <p className="model-attr">Waist: {!model.model ? ' ' : model.model.waist}</p>
               </div>
               <div className="col-md-4">
-                <p className="model-attr">Hips: {!model.model ? 'N/A' : model.model.hips}</p>
+                <p className="model-attr">Hips: {!model.model ? ' ' : model.model.hips}</p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-6">
-                <p className="model-attr" >Hair Color: {!model.model ? 'N/A' : model.model.hair_color}</p>
+                <p className="model-attr" >Hair Color: {!model.model ? ' ' : model.model.hair_color}</p>
               </div>
               <div className="col-md-6">
-                <p className="model-attr" >Eye Color: {!model.model ? 'N/A' : model.model.eye_color}</p>
+                <p className="model-attr" >Eye Color: {!model.model ? ' ' : model.model.eye_color}</p>
               </div>
             </div>
             <div>
