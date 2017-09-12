@@ -4,16 +4,15 @@
   margin-bottom: 20px;
   overflow-x: auto;
   margin-left: 60px;
+  padding-top: 60px;
 }
 
 .user-card {
   width: 420px;
-  min-width: 300px;
   margin: 10px;
 }
 
 .profile-pic {
-  width: 100%;
 }
 
 .listings-container {

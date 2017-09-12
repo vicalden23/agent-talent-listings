@@ -18,3 +18,14 @@ app.get('/api/listings', (req, res) => {
       res.status(500).send(err);
     });
 });
+
+app.get('/api/listings/:id', (req, res) => {
+  let modelData = axios.get('https://api.agent.com/public/profiles', { headers: {'x-authorization': '38Bh)8c^7/D+(t$9%?6q[{WAsReEkqDH' }})
+    .then(data => {
+      var index = Number(req.url.substr(14, req.url.length - 1))
+      res.status(200).send(data.data.users[index]);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});

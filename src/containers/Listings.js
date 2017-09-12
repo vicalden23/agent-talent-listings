@@ -3,11 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
   Card,
-  CardActions,
-  CardHeader,
   CardMedia,
-  CardTitle,
-  CardText
+  CardTitle
 } from 'material-ui/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -51,9 +48,9 @@ class Listings extends Component {
                         </span>
                         </div>
                       }
-                        subtitle={user.city_name}/>}
+                      subtitle={user.city_name}/>}
                     >
-                        <img className="profile-pic" src={user.picture} alt={user.username} />
+                      <img className="profile-pic" src={user.picture} alt={user.username} />
                     </CardMedia>
                   </Card>
                 </Link>

@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import {
   GridList,
   GridTile
 } from 'material-ui/GridList';
 import {
   Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
   CardTitle,
   CardText
 } from 'material-ui/Card';
@@ -38,10 +34,10 @@ class ModelDetails extends Component {
 
   componentDidMount() {
     let id = this.props.match.params.id;
-    axios.get('http://localhost:2023/api/listings')
+    axios.get(`http://localhost:2023/api/listings/${id}`)
       .then(res => {
         this.setState({
-          model: res.data.users[id]
+          model: res.data
         });
       })
       .catch(err => console.log(err));
@@ -61,7 +57,7 @@ class ModelDetails extends Component {
                   key={i}
                   className="grid-tile"
                 >
-                  <img src={photo} />
+                  <img src={photo} alt="model" />
                 </GridTile>
               </a>
           ))}
@@ -80,7 +76,7 @@ class ModelDetails extends Component {
             }
             subtitle={model.city_name}
           />
-          <CardText style="padding-bottom: 0px;" className="text">
+          <CardText className="text">
             <div className="row">
               <div className="col-md-6">
                 <p className="model-attr">Height: {!model.model ? 'N/A' : model.model.height}</p>
@@ -117,5 +113,5 @@ class ModelDetails extends Component {
     );
   }
 }
-/* {!model.model.weight ? ' ' : model.model.weight}*/
+
 export default ModelDetails;
