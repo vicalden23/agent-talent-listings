@@ -45,7 +45,7 @@ class ModelDetails extends Component {
 
   render() {
     let model = this.state.model;
-    console.log(model);
+
     return (
       <div className="container">
         <GridList style={styles.gridList} cellHeight={550}>

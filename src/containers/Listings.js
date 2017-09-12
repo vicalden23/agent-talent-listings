@@ -22,7 +22,6 @@ class Listings extends Component {
   componentDidMount() {
     axios.get('http://localhost:2023/api/listings')
       .then(res => {
-        console.log(res.data.users[0]);
         this.setState({
           listings: res.data.users
         });
