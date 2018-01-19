@@ -10,7 +10,7 @@ app.use(cors())
 app.listen(process.env.PORT || 2023, () => console.log('LISTENING PORT NUMBER 2023'));
 
 app.get('/api/listings', (req, res) => {
-  let modelData = axios.get('https://api.agent.com/public/profiles', { headers: {'x-authorization': '38Bh)8c^7/D+(t$9%?6q[{WAsReEkqDH' }})
+  let modelData = axios.get('https://api.agent.com/public/profiles', { headers: {'x-authorization': 'api key' }})
     .then(data => {
       res.status(200).send(data.data);
     })
@@ -20,7 +20,7 @@ app.get('/api/listings', (req, res) => {
 });
 
 app.get('/api/listings/:id', (req, res) => {
-  let modelData = axios.get('https://api.agent.com/public/profiles', { headers: {'x-authorization': '38Bh)8c^7/D+(t$9%?6q[{WAsReEkqDH' }})
+  let modelData = axios.get('https://api.agent.com/public/profiles', { headers: {'x-authorization': 'api key' }})
     .then(data => {
       var index = Number(req.url.substr(14, req.url.length - 1))
       res.status(200).send(data.data.users[index]);
